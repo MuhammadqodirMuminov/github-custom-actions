@@ -11,10 +11,12 @@ jobs:
         uses: actions/checkout@v3
 
       - name: Load && Cache Dependices
+        id: deps-on
         uses: ./.github/actions/cached-deps
         with:
           caching: false
-
+      - name: Inform Last about step
+        run: echo "${{ steps.deps-on.outputs.used-cache }}"
       - name: Lint code
         run: npm run lint
   test:
