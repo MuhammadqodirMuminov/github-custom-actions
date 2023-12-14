@@ -1,5 +1,5 @@
 name: Custom javscript actions.
 description: deploy to server AWS
 runs:
-  using: 'node18'
+  using: 'node20'
   main: 'main.js'
